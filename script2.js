@@ -7,8 +7,7 @@ function gameAttack(){
     var condit = 'guessed';
     theApp.attackCoordSets.push([rowAttack, colAttack, condit]);
     }
-    // computerDestroys();
-
+    computerDestroys();
   }
 
 function renderAttackButton(){
@@ -18,7 +17,7 @@ function renderAttackButton(){
   var attackLaunch = document.createElement("button");
   attackLaunch.innerText = "Attack Field!";
 
-  attackLaunch.addEventListener('click', computerDestroys);
+  attackLaunch.addEventListener('click', gameAttack);
   attackDiv.appendChild(attackLaunch);
 }
 
@@ -28,15 +27,15 @@ function computerDestroys(){
   var allThings = board.allCoordSets;
   var changeMe = document.querySelectorAll(".assignedAsset");
 
-  console.log("This is the Pre-loop Picked stuff: " + picked[3][0] + "," + picked[3][1]);
-  console.log("These are the Pre-loop Guessed things: " + guessed[3][0] + "," + guessed[3][1]);
+  // console.log("This is the Pre-loop Picked stuff: " + picked[3][0] + "," + picked[3][1]);
+  // console.log("These are the Pre-loop Guessed things: " + guessed[3][0] + "," + guessed[3][1]);
 
   for (i = 0; i < guessed.length; i++){
-    console.log('guess in loop: ' + guessed[i][0] + ', '+ guessed[i][1]);
-    console.log('guess set:' + i);
+    // console.log('guess in loop: ' + guessed[i][0] + ', '+ guessed[i][1]);
+    // console.log('guess set:' + i);
 
     for (j = 0; j < picked.length; j++){
-      console.log('picked in loop: ' + picked[j][0]  + ', '+ picked[j][1]);
+      // console.log('picked in loop: ' + picked[j][0]  + ', '+ picked[j][1]);
 
       if((guessed[i][0] === picked[j][0]) && (guessed[i][1] === picked[j][1])){
         changeMe[j].innerText = 'HIT';
@@ -45,12 +44,13 @@ function computerDestroys(){
         console.log("No match yet..");
       }
       };
+      console.log("click number: " + i);
     };
     aThing = changeMe[3].dataset.row;
-    console.log("This is A THING: " + aThing);
-    console.log("This is the Change Me stuff: " + changeMe[0].dataset.row + "," + changeMe[0].dataset.col);
-    console.log("This is the Picked stuff: " + picked[3][0] + "," + picked[3][1]);
-    console.log("These are the Guessed things: " + guessed[3][0] + "," + guessed[3][1]);
+    // console.log("This is A THING: " + aThing);
+    // console.log("This is the Change Me stuff: " + changeMe[0].dataset.row + "," + changeMe[0].dataset.col);
+    // console.log("This is the Picked stuff: " + picked[3][0] + "," + picked[3][1]);
+    // console.log("These are the Guessed things: " + guessed[3][0] + "," + guessed[3][1]);
 
     return theApp.pickedCoordSet;
     return theApp.assetCurrent;
@@ -73,7 +73,7 @@ function stopListen(){
     box.removeEventListener('click', selected);
     document.querySelector('#assetTitle').innerHTML = 'Assets Left:';
     document.querySelector('#assetCount').innerHTML = 2000;
-    gameAttack();
+
     renderAttackButton();
   }
 }
