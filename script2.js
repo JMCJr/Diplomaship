@@ -7,9 +7,20 @@ function gameAttack(){
     var condit = 'guessed';
     theApp.attackCoordSets.push([rowAttack, colAttack, condit]);
     }
-    computerDestroys();
+    // computerDestroys();
+
   }
 
+function renderAttackButton(){
+  console.log("In renderAttackButton Function");
+
+  var attackDiv = document.querySelector("#attack-button");
+  var attackLaunch = document.createElement("button");
+  attackLaunch.innerText = "Attack Field!";
+
+  attackLaunch.addEventListener('click', computerDestroys);
+  attackDiv.appendChild(attackLaunch);
+}
 
 function computerDestroys(){
   var picked = theApp.pickedCoordSet;
@@ -40,6 +51,9 @@ function computerDestroys(){
     console.log("This is the Change Me stuff: " + changeMe[0].dataset.row + "," + changeMe[0].dataset.col);
     console.log("This is the Picked stuff: " + picked[3][0] + "," + picked[3][1]);
     console.log("These are the Guessed things: " + guessed[3][0] + "," + guessed[3][1]);
+
+    return theApp.pickedCoordSet;
+    return theApp.assetCurrent;
   }
 
 
@@ -60,6 +74,7 @@ function stopListen(){
     document.querySelector('#assetTitle').innerHTML = 'Assets Left:';
     document.querySelector('#assetCount').innerHTML = 2000;
     gameAttack();
+    renderAttackButton();
   }
 }
 
@@ -75,8 +90,6 @@ function selected(event) {
     document.querySelector('#assetCount').innerHTML = theApp.assetCurrent;
   }
   stopListen();
-  return theApp.pickedCoordSet;
-  return theApp.assetCurrent;
 }
 
 
