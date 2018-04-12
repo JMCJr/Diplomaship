@@ -1,0 +1,73 @@
+main {
+  
+}
+
+#test {
+  width: 30%;
+  height: 40px;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  margin:0 auto;
+}
+
+p {
+  margin: 0 auto;
+}
+
+.board-holder {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  padding: 5px;
+  background: green;
+  height: 40px;
+  width: 40px;
+  border: 2px solid grey;
+  display: flex;
+}
+
+.hit {
+  padding: 5px;
+  background-image: url(images/hit.jpg);
+  background-size: 55px;
+  height: 40px;
+  width: 40px;
+  border: 2px solid red;
+  display: flex;
+  margin: 0 auto;
+}
+
+.miss {
+  padding: 5px;
+  background-image: url(images/miss.jpg);
+  background-size: 55px;
+  height: 40px;
+  width: 40px;
+  border: 2px solid orange;
+  display: flex;
+  margin: 0 auto;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+}
+
+.assignedAsset {
+  padding: 5px;
+  background-color: lightblue;
+  height: 40px;
+  width: 40px;
+  border: 2px solid navy;
+  display: flex;
+  justify-content: center;
+  margin:0 auto;
+}
