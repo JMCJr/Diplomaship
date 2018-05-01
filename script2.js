@@ -10,6 +10,14 @@ function gameAttack(){
     computerDestroys();
   }
 
+function renderQuestion(){
+  var questions = {
+    {
+      question: "What is ten times 300?",
+      answer: 3000
+  }
+}
+
 function renderAttackButton(){
   console.log("In renderAttackButton Function");
 
